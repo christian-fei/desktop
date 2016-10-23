@@ -9,6 +9,7 @@
   "devDependencies": {
     "ava": "^0.16.0",
     "electron-packager": "*",
+    "spectron": "^3.4.0",
     "xo": "^0.17.0"
   },
   "main": "main.js",
