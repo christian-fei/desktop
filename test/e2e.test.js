@@ -6,14 +6,14 @@ import {Application} from 'spectron';
 
 let app;
 
-test.beforeEach(t => {
+test.before(t => {
   app = new Application({
     path: '/Users/saiph/Documents/projects/pomodoro.cc-mac/Pomodoro-darwin-x64/Pomodoro.app/Contents/MacOS/Pomodoro'
   })
   return app.start()
 });
 
-test.afterEach(t => {
+test.after(t => {
   if (app && app.isRunning()) {
     return app.stop()
   }
@@ -27,4 +27,10 @@ test('launches 1 window with https://pomodoro.cc', t => {
   .getUrl().then(function(url) {
     t.is(url, 'https://pomodoro.cc/');
   });
+});
+
+test('opens external links in new window', t => {
+  return app.client
+  .waitForVisible('#root', 10000)
+  .click('.navigation-bar a:nth-child(4)')
 });
