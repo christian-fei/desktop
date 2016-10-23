@@ -7,10 +7,14 @@
     "menubar": "*"
   },
   "devDependencies": {
-    "electron-packager": "*"
+    "ava": "^0.16.0",
+    "electron-packager": "*",
+    "xo": "^0.17.0"
   },
   "main": "main.js",
   "scripts": {
+    "test": "ava && xo",
+    "test:watch": "ava --watch",
     "build": "electron-packager . Pomodoro --platform=darwin --arch=x64 --version=0.36.0 --icon=Icon.icns --overwrite",
     "optimize": "ditto -c -k --sequesterRsrc --keepParent ./Pomodoro-darwin-x64/Pomodoro.app ./Pomodoro-darwin-x64/Pomodoro.zip",
     "start": "electron ."
