@@ -1,5 +1,7 @@
 # pomodoro.cc menubar app
 
+[![Build Status](https://travis-ci.org/christian-fei/pomodoro.cc-mac.svg?branch=master)](https://travis-ci.org/christian-fei/pomodoro.cc-mac)
+
 ## instructions
 
 - run `npm install`
