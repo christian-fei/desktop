@@ -1,0 +1,18 @@
+{
+  "name": "pomodoro-cc-mac-app",
+  "version": "1.0.0",
+  "description": "Mac menubar app for pomodoro.cc",
+  "dependencies": {
+    "electron": "*",
+    "menubar": "*"
+  },
+  "devDependencies": {
+    "electron-packager": "*"
+  },
+  "main": "main.js",
+  "scripts": {
+    "build": "electron-packager . Pomodoro --platform=darwin --arch=x64 --version=0.36.0 --icon=Icon.icns --overwrite",
+    "optimize": "ditto -c -k --sequesterRsrc --keepParent ./Pomodoro-darwin-x64/Pomodoro.app ./Pomodoro-darwin-x64/Pomodoro.zip",
+    "start": "electron ."
+  }
+}
