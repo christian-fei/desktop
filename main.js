@@ -10,12 +10,6 @@ const app = menubar({
 
 app.on('after-create-window', () => {
 	app.window.loadURL('https://pomodoro.cc');
-	let webContents = app.window.webContents;
-	webContents.on('will-navigate', function (event, url) {
-		if (url === 'https://pomodoro.cc/docs') {
-			utils.openUrlInExternalWindow(event, url);
-		}
-	});
-
-	webContents.on('new-window', utils.openUrlInExternalWindow);
+	app.window.webContents.on('will-navigate', utils.openUrlInExternalWindow);
+	app.window.webContents.on('new-window', utils.openUrlInExternalWindow);
 });
