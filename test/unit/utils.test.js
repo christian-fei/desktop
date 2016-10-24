@@ -1,7 +1,7 @@
 'use strict';
 
 import test from 'ava';
-import {isExternalLink} from '../utils';
+import {isExternalLink} from '../../utils';
 
 test('utils.isExternalLink returns false for internal urls', t => {
 	t.false(isExternalLink('https://pomodoro.cc'));
