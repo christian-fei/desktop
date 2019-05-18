@@ -1,8 +1,10 @@
 'use strict'
 const shell = require('electron').shell
+const pomodoroRegExp = /^https?:\/\/pomodoro\.cc/
 
 const isExternalLink = url => {
-  const isInternalLink = /^https?:\/\/pomodoro\.cc/.test(url) && url !== 'https://pomodoro.cc/docs'
+  console.log('url', url)
+  const isInternalLink = pomodoroRegExp.test(url) && url !== 'https://pomodoro.cc/docs'
   return !isInternalLink
 }
 const openUrlInExternalWindow = (event, url) => {
@@ -10,8 +12,10 @@ const openUrlInExternalWindow = (event, url) => {
     return false
   }
 
-  event.preventDefault()
-  shell.openExternal(url)
+  if (!pomodoroRegExp.test(url)) {
+    event.preventDefault()
+    shell.openExternal(url)
+  }
 }
 
 module.exports = {
