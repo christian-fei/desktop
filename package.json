@@ -10,14 +10,14 @@
     "ava": "^0.16.0",
     "electron-packager": "*",
     "spectron": "^3.4.0",
-    "xo": "^0.17.0"
+    "standard": "*"
   },
   "main": "main.js",
   "scripts": {
-    "test": "ava test/unit && xo",
+    "test": "ava test/unit && standard",
     "test:all": "ava",
     "test:watch": "npm t -- --watch",
-    "build": "electron-packager . Pomodoro --platform=darwin --arch=x64 --version=0.36.0 --icon=Icon.icns --overwrite",
+    "build": "electron-packager . Pomodoro --platform=darwin --arch=x64 --icon=Icon.icns --overwrite",
     "optimize": "ditto -c -k --sequesterRsrc --keepParent ./Pomodoro-darwin-x64/Pomodoro.app ./Pomodoro-darwin-x64/Pomodoro.zip",
     "start": "electron ."
   }
