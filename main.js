@@ -13,9 +13,14 @@ const app = menubar({
 
 app.on('after-create-window', () => {
   app.window.loadURL('https://pomodoro.cc')
-  if (app.tray && typeof app.tray.setTitle === 'function') {
-    app.tray.setTitle('x')
-  }
+
+  setInterval(() => {
+    if (!app.tray || app.tray.isDestroyed()) return
+    const title = app.window.getTitle()
+    const timerMatch = title.match(/^(\d{2}:\d{2})/gi)
+    const newTitle = timerMatch && timerMatch[0] ? timerMatch[0] : ''
+    app.tray.setTitle(newTitle)
+  }, 1000)
   app.window.webContents.on('will-navigate', utils.openUrlInExternalWindow)
   app.window.webContents.on('new-window', utils.openUrlInExternalWindow)
 })
