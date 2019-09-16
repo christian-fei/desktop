@@ -17,7 +17,8 @@
     "test": "ava test/unit && standard",
     "test:all": "ava",
     "test:watch": "npm t -- --watch",
-    "build": "electron-packager . Pomodoro --platform=darwin --arch=x64 --icon=Icon.icns --overwrite",
+    "build:mac": "electron-packager . Pomodoro --platform=darwin --arch=x64 --icon=Icon.icns --overwrite",
+    "build:linux": "electron-packager . Pomodoro.linux --platform=linux --arch=x64 --icon=Icon.icns --overwrite",
     "optimize": "ditto -c -k --sequesterRsrc --keepParent ./Pomodoro-darwin-x64/Pomodoro.app ./Pomodoro-darwin-x64/Pomodoro.zip",
     "start": "electron ."
   }
