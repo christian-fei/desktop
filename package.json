@@ -3,13 +3,13 @@
   "version": "1.0.0",
   "description": "Mac menubar app for pomodoro.cc",
   "dependencies": {
-    "electron": "*",
-    "menubar": "*"
+    "menubar": "^6.0.0"
   },
   "devDependencies": {
     "ava": "^0.16.0",
-    "electron-packager": "*",
-    "spectron": "^3.4.0",
+    "electron": "^5.0.1",
+    "electron-packager": "^13.1.1",
+    "spectron": "^3.8.0",
     "standard": "*"
   },
   "main": "main.js",
