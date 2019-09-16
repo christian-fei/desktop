@@ -2,8 +2,12 @@ const utils = require('./utils')
 const { menubar } = require('menubar')
 
 const app = menubar({
-  width: 470,
-  height: 500,
+  options: {
+    browserWindow: {
+      width: 470,
+      height: 500
+    }
+  },
   preloadWindow: true
 })
 
