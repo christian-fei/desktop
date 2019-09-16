@@ -8,3 +8,5 @@
 - run `npm install`
 - run `npm start` to run app from CLI without building Pomodoro.app
 - run `npm run build:mac` to make Pomodoro.app
+- run `npm run build:linux` to make Pomodoro.linux.app
+- run `npm run build:win32` to make Pomodoro.win32.app
