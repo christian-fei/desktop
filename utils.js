@@ -1,4 +1,3 @@
-'use strict'
 const shell = require('electron').shell
 const pomodoroRegExp = /^https?:\/\/pomodoro\.cc/
 
