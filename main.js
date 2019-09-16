@@ -21,6 +21,7 @@ app.on('after-create-window', () => {
     const newTitle = timerMatch && timerMatch[0] ? timerMatch[0] : ''
     app.tray.setTitle(newTitle)
   }, 1000)
+
   app.window.webContents.on('will-navigate', utils.openUrlInExternalWindow)
   app.window.webContents.on('new-window', utils.openUrlInExternalWindow)
 })
