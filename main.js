@@ -4,8 +4,8 @@ const { menubar } = require('menubar')
 const app = menubar({
   options: {
     browserWindow: {
-      width: 470,
-      height: 500
+      width: 600,
+      height: 800
     }
   },
   preloadWindow: true
