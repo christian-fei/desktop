@@ -16,9 +16,9 @@ app.on('after-create-window', () => {
 
   setInterval(() => {
     if (!app.tray || app.tray.isDestroyed()) return
-    const title = app.window.getTitle()
+    const title = app.window.getTitle() || ''
     const timerMatch = title.match(/^(\d{2}:\d{2})/gi)
-    const newTitle = timerMatch && timerMatch[0] ? timerMatch[0] : ''
+    const newTitle = timerMatch && `${timerMatch[0]}` ? timerMatch[0] : ''
     app.tray.setTitle(newTitle)
   }, 1000)
 
